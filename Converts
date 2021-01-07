@@ -2,7 +2,7 @@
 #include <math.h>
 #include "myconio.h"
 
-int basetodec(char number[7], int baseA);
+int basetodec(char number[], int baseA);
 int dectobase(char dec[], int baseB);
 int basetobase(char num[], int baseA, int baseB);
 int inttochar(char chars[], int number);
@@ -20,7 +20,7 @@ int main(void)
     getch();
 }
 
-int basetodec(char number[7], int baseA)
+int basetodec(char number[], int baseA)
 {
     int dec = 0;
     if (baseA <= 10)
