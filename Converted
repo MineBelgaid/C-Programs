@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+#include "myconio.h"
+
+int convert(int number, int baseA, int baseB);
+
+int main(void)
+{
+    convert(110101,2,16);
+    getch();
+}
+
+int convert(int number, int baseA, int baseB)
+{
+    int i = 0, rem, result = 0, dec = 0;
+    while (number != 0)
+    {
+        dec += (number % 10) * pow(baseA, i);
+        number /= 10;
+        i++;
+    }
+    i = 0;
+    while (dec != 0)
+    {
+        rem = dec % baseB;
+        result = result + rem * (pow(10, i));
+        dec /= baseB;
+        i++;
+    }
+    printf("The Numbre in base %d is : %d ",baseB, result);
+}
